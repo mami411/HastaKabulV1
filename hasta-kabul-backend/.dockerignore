@@ -1,0 +1,11 @@
+# Yerel derleme ciktilari imaja girmez; konteyner kendi restore/publish'ini yapar.
+**/bin/
+**/obj/
+**/.vs/
+**/.vscode/
+.git/
+.gitignore
+.env
+*.user
+deploy/
+README.md

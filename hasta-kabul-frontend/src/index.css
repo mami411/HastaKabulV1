@@ -1,0 +1,119 @@
+/* Temel belirteçler ve sıfırlama. Dış font yok: çevrimdışı çalışır, üçüncü tarafa istek gitmez (KVKK). */
+:root {
+  /* Kurum renkleri (--brand, --brand-strong, --brand-soft, --brand-tint, --accent, --accent-soft, --paper,
+     --surface, --ink, --ink-2, --ink-3, --line, --line-strong, --desk, --focus) src/brand.ts'ten gelir ve
+     derlemede index.html'e gömülür (vite.config.ts: kurumMarkasi). Burada yalnız kurumdan bağımsız durum
+     renkleri var. */
+  --listen: #c0442d;
+  --listen-soft: #f8e3dc;
+  --warn: #7f4d00;
+  --warn-soft: #fbf1db;
+  --warn-line: #ead19a;
+  --warn-dot: #c98a00;
+  --danger: #a3261c;
+  --danger-strong: #861f17;
+  --danger-soft: #fbe7e4;
+  --danger-line: #f0c2bb;
+  --ok: #1b7246;
+  --ok-soft: #e2f2e8;
+  --ok-line: #b9dcc8;
+  --ok-dash: #9ccab0;
+  --shadow-ink: rgba(15, 31, 51, 0.12);
+
+  /* Dış font yok (çevrimdışı, KVKK): her platformun okunaklı sistem yazı tipi; Windows'ta Segoe UI Variable. */
+  --font: "Segoe UI Variable Text", "Segoe UI", system-ui, -apple-system, Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-display: "Segoe UI Variable Display", "Segoe UI", system-ui, -apple-system, Roboto, "Helvetica Neue", Arial,
+    sans-serif;
+  --mono: ui-monospace, "SF Mono", "Cascadia Mono", Consolas, monospace;
+
+  font-family: var(--font);
+  font-size: 16px;
+  line-height: 1.45;
+  color: var(--ink);
+  background: var(--paper);
+  color-scheme: light;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+  overflow: hidden; /* kaydırma uygulama içindeki sohbet alanında; sayfa sabit */
+  overscroll-behavior: none;
+}
+
+body {
+  background: var(--paper);
+}
+
+#root {
+  height: 100%;
+}
+
+h1,
+h2,
+h3,
+p,
+dl,
+dd,
+ul {
+  margin: 0;
+}
+
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+button,
+input {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+button:disabled {
+  cursor: default;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}

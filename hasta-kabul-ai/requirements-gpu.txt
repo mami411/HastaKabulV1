@@ -1,0 +1,4 @@
+# İsteğe bağlı: faster-whisper CUDA (CTranslate2) için cuBLAS 12.
+# cuDNN 9 (cudnn64_9.dll) ctranslate2 tekerleğinin içinde gelir; ayrıca gerekmez.
+# Kurulmazsa ve STT_CUDA_DLL_DIZINLERI de verilmezse STT otomatik CPU int8'e düşer.
+nvidia-cublas-cu12

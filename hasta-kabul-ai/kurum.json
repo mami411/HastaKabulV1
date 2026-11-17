@@ -1,0 +1,13 @@
+{
+  "_aciklama": "Kurum (özel hastane / klinik) yapılandırması. Asistanın karşılama, kapanış, yardım, hata ve kurum sorusu yanıtları buradan gelir. Değerler cümle içinde EKSİZ kullanılır (ör. '... çağrı merkezi numarası 0850 000 00 00'); 'MedTech'e' gibi ek gerektiren yazım yoktur. Ayrıntı: kökteki KURUM.md. MedTech kurgusal bir demo kurumudur; numara ve adres gerçek değildir.",
+  "tam_ad": "MedTech Özel Hastanesi",
+  "kisa_ad": "MedTech",
+  "uygulama_adi": "MedTech Cep",
+  "asistan_adi": "MedTech Asistan",
+  "cagri_merkezi": "0850 000 00 00",
+  "adres": "Örnek Mahallesi, Şifa Sokağı No: 1, İstanbul",
+  "calisma_saatleri": "Polikliniklerimiz hafta içi 09:00 ile 17:00 arasında, cumartesi ve pazar 09:00 ile 13:00 arasında hasta kabul eder; hafta içi öğle arası 12:00 ile 13:00 arasıdır.",
+  "okunuslar": {
+    "MedTech": "Med tek"
+  }
+}

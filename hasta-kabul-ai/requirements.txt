@@ -1,0 +1,17 @@
+# ai-voice (8002) — doğrudan bağımlılıklar (Python 3.12, Windows'ta denendi)
+fastapi==0.163.1
+uvicorn[standard]==0.54.0
+httpx==0.28.1
+python-multipart==0.0.33
+python-dotenv==1.2.4
+tzdata==2026.6
+faster-whisper==1.2.1
+ctranslate2==4.9.0
+av==19.0.2
+piper-tts==1.8.0
+onnxruntime==1.32.0
+numpy==2.5.4
+# test
+pytest==9.2.0
+# İsteğe bağlı: Anthropic sağlayıcısı (kurulu değilse import kırılmaz)
+# anthropic

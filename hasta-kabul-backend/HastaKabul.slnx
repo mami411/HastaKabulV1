@@ -1,0 +1,11 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/HastaKabul.Api/HastaKabul.Api.csproj" />
+    <Project Path="src/HastaKabul.Application/HastaKabul.Application.csproj" />
+    <Project Path="src/HastaKabul.Domain/HastaKabul.Domain.csproj" />
+    <Project Path="src/HastaKabul.Infrastructure/HastaKabul.Infrastructure.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/HastaKabul.Tests/HastaKabul.Tests.csproj" />
+  </Folder>
+</Solution>

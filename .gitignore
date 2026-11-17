@@ -1,0 +1,39 @@
+# Yerel çalışma zamanı (taşınabilir PostgreSQL, veri, loglar, derlenmiş kopyalar)
+tools/pgsql/
+tools/pgdata/
+tools/logs/
+tools/run/
+tools/*.env
+
+# Gizli/yerel yapılandırma
+.env
+.env.*
+!.env.example
+appsettings.Local.json
+
+# Derleme çıktıları ve bağımlılıklar
+node_modules/
+bin/
+obj/
+dist/
+dist-mobil/
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Veri, model ve kayıtlar
+*.sqlite3*
+*.db
+*.log
+logs/
+
+# Araç/editör
+.claude/
+.vs/
+.vscode/
+.idea/
+
+# Projeyle ilgisiz belgeler (rapor, sunum, ödev)
+*.docx
+*.pptx

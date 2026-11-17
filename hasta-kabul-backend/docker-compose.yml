@@ -1,0 +1,46 @@
+services:
+  # Bilgi tabani icin pgvector hazir imajla gelir; P1'de sema degismeden
+  # vektor aramasi acilabilir.
+  db:
+    image: pgvector/pgvector:pg16
+    container_name: hasta-kabul-db
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-postgres}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-postgres}
+      POSTGRES_DB: ${POSTGRES_DB:-hasta_kabul}
+    # Makinede kurulu PostgreSQL 18 5432'yi tutuyor; disa 5433 olarak acilir.
+    # Konteynerler birbirine her zaman 5432 uzerinden konusur.
+    ports:
+      - "${DB_HOST_PORT:-5433}:5432"
+    volumes:
+      - db-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-postgres} -d ${POSTGRES_DB:-hasta_kabul}"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: hasta-kabul-api
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      ASPNETCORE_ENVIRONMENT: ${ASPNETCORE_ENVIRONMENT:-Development}
+      ASPNETCORE_URLS: http://+:3000
+      ConnectionStrings__Default: "Host=db;Port=5432;Database=${POSTGRES_DB:-hasta_kabul};Username=${POSTGRES_USER:-postgres};Password=${POSTGRES_PASSWORD:-postgres}"
+      Jwt__Secret: ${JWT_SECRET}
+      TcProtection__Pepper: ${TC_PEPPER}
+      TcProtection__EncryptionKey: ${TC_ENCRYPTION_KEY}
+      ServiceKey: ${SERVICE_KEY}
+      Simplify__BaseUrl: ${SIMPLIFY_URL:-http://ai-simplify:8001}
+      Simplify__ServiceKey: ${SERVICE_KEY}
+      Demo__Seed: "true"
+    ports:
+      - "3000:3000"
+
+volumes:
+  db-data:

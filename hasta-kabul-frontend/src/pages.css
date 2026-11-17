@@ -1,0 +1,1068 @@
+/* ============================================================
+ * Uygulama kabuğu ve asistansız sayfalar (App.css'teki belirteç ve
+ * bileşenlerle aynı görsel dil): başlık alt satırı, kaydırılan sayfa,
+ * ana sayfa, randevu adımları, Randevularım, İlaçlarım, alt gezinme.
+ * ============================================================ */
+
+.header-sub {
+  font-size: 0.8125rem;
+  color: var(--ink-2);
+}
+
+.brand-mini strong[tabindex]:focus {
+  outline: none;
+}
+
+.back-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  margin-left: -6px;
+  border: 0;
+  border-radius: 12px;
+  background: transparent;
+  color: var(--ink);
+}
+
+.back-icon:hover {
+  background: var(--brand-tint);
+}
+
+.page-scroll {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  scrollbar-color: var(--line-strong) transparent;
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 16px calc(14px + env(safe-area-inset-right)) 24px calc(14px + env(safe-area-inset-left));
+}
+
+.page-title h1 {
+  font-size: 1.375rem;
+  font-weight: 750;
+  letter-spacing: -0.01em;
+  line-height: 1.25;
+}
+
+.page-title h1:focus {
+  outline: none;
+}
+
+.page-title p {
+  margin-top: 2px;
+  color: var(--ink-2);
+  font-size: 0.9375rem;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.section-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.section-head h2,
+.section-title {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+
+.link-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  min-height: 40px;
+  padding: 0 6px;
+  border: 0;
+  background: transparent;
+  color: var(--brand);
+  font-weight: 650;
+  font-size: 0.9375rem;
+}
+
+.link-btn:disabled {
+  color: var(--ink-3);
+}
+
+.state-line {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 4px;
+  color: var(--ink-2);
+  font-size: 0.9375rem;
+}
+
+.empty-card {
+  align-items: flex-start;
+}
+
+.empty-card p {
+  color: var(--ink-2);
+}
+
+.page-note {
+  font-size: 0.8125rem;
+  color: var(--ink-3);
+}
+
+.retry-btn {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 40px;
+  margin-left: auto;
+  padding: 0 12px;
+  border: 1px solid var(--warn-line);
+  border-radius: 10px;
+  background: var(--surface);
+  color: var(--warn);
+  font-weight: 650;
+  font-size: 0.875rem;
+}
+
+.warning-card > div {
+  flex: 1;
+  min-width: 0;
+}
+
+.warning-card small,
+.conflict-card small {
+  display: block;
+  margin-top: 2px;
+  font-size: 0.75rem;
+  opacity: 0.8;
+}
+
+.conflict-card {
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 10px;
+  background: var(--danger-soft);
+  border-color: var(--danger-line);
+  color: var(--danger);
+}
+
+.conflict-card svg {
+  flex: none;
+  margin-top: 2px;
+}
+
+.conflict-card p {
+  font-size: 0.9375rem;
+  font-weight: 600;
+}
+
+.btn-primary.wide,
+.btn-secondary.wide {
+  width: 100%;
+}
+
+.btn-secondary {
+  gap: 8px;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Ana sayfa */
+
+.home-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+}
+
+.home-grid .quick-tile {
+  min-height: 92px;
+}
+
+.assistant-cta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  min-height: 72px;
+  padding: 12px 14px;
+  border: 0;
+  border-radius: 18px;
+  background: var(--brand);
+  color: #fff;
+  text-align: left;
+}
+
+.assistant-cta:hover {
+  background: var(--brand-strong);
+}
+
+.assistant-cta > span:nth-child(2) {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.3;
+}
+
+.assistant-cta strong {
+  font-size: 1.0625rem;
+}
+
+.assistant-cta > span:nth-child(2) span {
+  font-size: 0.8125rem;
+  opacity: 0.88;
+}
+
+.assistant-cta-icon {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.emergency-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  font-size: 0.8125rem;
+  color: var(--ink-2);
+}
+
+.emergency-note svg {
+  flex: none;
+  margin-top: 2px;
+  color: var(--danger);
+}
+
+.emergency-note a {
+  color: var(--danger);
+  font-weight: 700;
+}
+
+/* Yaklaşan randevu kartı */
+
+.upcoming-card {
+  gap: 10px;
+  border-color: var(--ok-line);
+}
+
+.upcoming-head {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.upcoming-head > div {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.3;
+}
+
+.upcoming-head strong {
+  font-size: 1.0625rem;
+}
+
+.upcoming-head > div span {
+  font-size: 0.875rem;
+  color: var(--ink-2);
+}
+
+.upcoming-icon {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
+  background: var(--ok-soft);
+  color: var(--ok);
+}
+
+.status-pill {
+  flex: none;
+  padding: 3px 9px;
+  border-radius: 999px;
+  background: var(--brand-tint);
+  color: var(--brand);
+  font-size: 0.75rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.status-checked_in,
+.status-in_exam {
+  background: var(--warn-soft);
+  color: var(--warn);
+}
+
+.code-line {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: 12px;
+  border: 1px dashed var(--ok-dash);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--ink-3);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.code-line strong {
+  font-family: var(--mono);
+  font-size: 1.25rem;
+  letter-spacing: 0.14em;
+  color: var(--ink);
+}
+
+.upcoming-card.compact {
+  padding: 10px 12px;
+  animation: none;
+}
+
+.upcoming-card.compact .status-pill {
+  display: none;
+}
+
+.intro-upcoming {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 12px;
+}
+
+.intro-upcoming > span {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+
+/* Randevularım / Muayenelerim */
+
+.segmented {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px;
+  padding: 4px;
+  border-radius: 14px;
+  background: var(--line);
+}
+
+.segmented button {
+  min-height: 42px;
+  border: 0;
+  border-radius: 10px;
+  background: transparent;
+  font-weight: 650;
+  font-size: 0.9375rem;
+  color: var(--ink-2);
+}
+
+.segmented button.selected {
+  background: var(--surface);
+  color: var(--ink);
+  box-shadow: 0 1px 2px var(--shadow-ink);
+}
+
+.visit-card {
+  gap: 12px;
+}
+
+.visit-card-head {
+  display: flex;
+  flex-direction: column;
+}
+
+.visit-card-head strong {
+  font-size: 1.0625rem;
+}
+
+.visit-card-head span {
+  font-size: 0.875rem;
+  color: var(--ink-2);
+}
+
+.field-label {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+
+.visit-card .visit-diagnosis {
+  color: var(--ink);
+}
+
+/* İlaçlarım */
+
+.med-card {
+  gap: 10px;
+  border-left: 4px solid var(--brand);
+}
+
+.med-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.med-head h2 {
+  font-size: 1.1875rem;
+  font-weight: 750;
+}
+
+.med-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: var(--brand-tint);
+  color: var(--brand);
+}
+
+.med-card p {
+  font-size: 0.9375rem;
+}
+
+.med-card .med-usage {
+  font-weight: 650;
+}
+
+.med-card .med-source {
+  padding-top: 8px;
+  border-top: 1px solid var(--line);
+  font-size: 0.8125rem;
+  color: var(--ink-3);
+}
+
+/* Randevu al (adım adım) */
+
+.stepper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 40px;
+  margin: -6px 0 -4px;
+}
+
+.back-btn {
+  margin-left: -8px;
+}
+
+.step-count {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.8125rem;
+  font-weight: 650;
+  color: var(--ink-3);
+  font-variant-numeric: tabular-nums;
+}
+
+.step-count i {
+  width: 18px;
+  height: 4px;
+  border-radius: 2px;
+  background: var(--line-strong);
+}
+
+.step-count i.done {
+  background: var(--brand);
+}
+
+.step-count span {
+  margin-left: 6px;
+}
+
+.choice-trail {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--brand);
+}
+
+.choice-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.choice {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  min-height: 64px;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: var(--surface);
+  text-align: left;
+  transition: border-color 0.15s ease;
+}
+
+.choice:hover {
+  border-color: var(--brand);
+}
+
+.choice > svg {
+  flex: none;
+  color: var(--ink-3);
+}
+
+.choice-icon {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background: var(--brand-tint);
+  color: var(--brand);
+}
+
+.choice-text {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.3;
+}
+
+.choice-text strong {
+  font-size: 1.0625rem;
+}
+
+.choice-text span {
+  font-size: 0.8125rem;
+  color: var(--ink-2);
+}
+
+.day-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+
+.day-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1px;
+  width: 100%;
+  min-height: 78px;
+  padding: 8px 4px;
+  border: 1px solid var(--line-strong);
+  border-radius: 14px;
+  background: var(--surface);
+  line-height: 1.2;
+}
+
+.day-btn strong {
+  font-size: 0.9375rem;
+}
+
+.day-btn span {
+  font-size: 0.8125rem;
+  color: var(--ink-2);
+}
+
+.day-btn em {
+  margin-top: 4px;
+  font-style: normal;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--ok);
+}
+
+.day-btn:hover:not(:disabled) {
+  border-color: var(--brand);
+  background: var(--brand-tint);
+}
+
+.day-btn.selected {
+  border-color: var(--brand);
+  box-shadow: 0 0 0 2px var(--brand-soft);
+}
+
+.day-btn:disabled {
+  background: transparent;
+  border-color: var(--line);
+}
+
+.day-btn:disabled strong,
+.day-btn:disabled span,
+.day-btn:disabled em {
+  color: var(--ink-3);
+}
+
+.time-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+
+.time-grid .slot-time {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  line-height: 1.15;
+}
+
+.time-grid .slot-time small {
+  font-size: 0.6875rem;
+  font-weight: 500;
+  color: var(--ink-3);
+}
+
+.confirm-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+/* Kilit uyarısı (asistan dışı sayfalar) ve alt gezinme */
+
+.shell-banner {
+  flex: none;
+  padding: 8px calc(14px + env(safe-area-inset-right)) 0 calc(14px + env(safe-area-inset-left));
+  background: var(--paper);
+}
+
+.tabbar {
+  flex: none;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  align-items: end;
+  padding: 6px calc(4px + env(safe-area-inset-right)) max(6px, env(safe-area-inset-bottom))
+    calc(4px + env(safe-area-inset-left));
+  background: var(--surface);
+  border-top: 1px solid var(--line);
+}
+
+.tab {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  min-width: 0;
+  min-height: 52px;
+  padding: 4px 2px;
+  border: 0;
+  border-radius: 12px;
+  background: transparent;
+  color: var(--ink-3);
+}
+
+.tab-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 28px;
+  border-radius: 14px;
+  transition: background-color 0.15s ease;
+}
+
+.tab-label {
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 0.6875rem;
+  font-weight: 650;
+}
+
+.tab.current {
+  color: var(--brand);
+}
+
+.tab.current .tab-icon {
+  background: var(--brand-soft);
+}
+
+.tab-assistant {
+  color: var(--brand);
+}
+
+.tab.tab-assistant .tab-icon {
+  width: 48px;
+  height: 48px;
+  margin-top: -18px;
+  border-radius: 50%;
+  background: var(--brand);
+  color: #fff;
+  box-shadow: 0 6px 16px -6px color-mix(in srgb, var(--brand) 70%, transparent);
+}
+
+@media (max-width: 370px) {
+  .day-grid,
+  .time-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .tab-label {
+    font-size: 0.625rem;
+  }
+}
+
+/* ============================================================
+ * Kurum kimliği (renkler src/brand.ts'ten): başlık, ana sayfa karşılaması,
+ * çağrı merkezi, poliklinik ızgarası ve hekim seçimi
+ * ============================================================ */
+
+.logo {
+  flex: none;
+  display: block;
+  border-radius: 28%;
+}
+
+.brand-name {
+  font-family: var(--font-display);
+  font-weight: 750;
+  letter-spacing: -0.01em;
+  color: var(--brand-strong);
+}
+
+.page-title h1,
+.welcome h1,
+.login-head h1,
+.intro h2 {
+  font-family: var(--font-display);
+}
+
+/* Ana sayfa karşılaması */
+
+.welcome {
+  position: relative;
+  overflow: hidden;
+  padding: 16px 16px 18px;
+  border-radius: 20px;
+  background: linear-gradient(135deg, var(--brand) 0%, var(--brand-strong) 100%);
+  color: #fff;
+}
+
+/* Logodaki artının büyütülmüş, silik izi (süs) */
+.welcome::after {
+  content: "";
+  position: absolute;
+  right: -18px;
+  top: -18px;
+  width: 112px;
+  height: 112px;
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)) center / 30px 100% no-repeat,
+    linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)) center / 100% 30px no-repeat;
+  border-radius: 8px;
+  pointer-events: none;
+}
+
+.welcome-org {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  opacity: 0.9;
+}
+
+.welcome h1 {
+  position: relative;
+  margin-top: 4px;
+  font-size: 1.375rem;
+  font-weight: 750;
+  letter-spacing: -0.01em;
+  line-height: 1.25;
+  overflow-wrap: anywhere;
+}
+
+.welcome h1:focus {
+  outline: none;
+}
+
+.welcome-date {
+  margin-top: 2px;
+  font-size: 0.9375rem;
+  opacity: 0.9;
+}
+
+/* Çağrı merkezi kısayolu */
+
+.call-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 12px 12px 14px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: var(--surface);
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.call-card:hover {
+  border-color: var(--brand);
+}
+
+.call-card-icon {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+.call-card-text {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.3;
+}
+
+.call-card-text > span {
+  font-size: 0.8125rem;
+  color: var(--ink-2);
+}
+
+.call-card-text strong {
+  font-size: 1.125rem;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+}
+
+.call-card-text small {
+  font-size: 0.75rem;
+  color: var(--ink-3);
+}
+
+.call-card-action {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 40px;
+  padding: 0 14px;
+  border-radius: 999px;
+  background: var(--brand-tint);
+  border: 1px solid var(--brand-soft);
+  color: var(--brand);
+  font-weight: 700;
+  font-size: 0.9375rem;
+}
+
+/* Poliklinik araması ve ızgarası */
+
+.search-box {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search-box > svg {
+  position: absolute;
+  left: 14px;
+  color: var(--ink-3);
+  pointer-events: none;
+}
+
+.search-box input {
+  width: 100%;
+  min-height: 48px;
+  padding: 0 44px 0 42px;
+  border: 1px solid var(--line-strong);
+  border-radius: 14px;
+  background: var(--surface);
+  font-size: 1rem; /* 16px: iOS odakta yakınlaştırmasın */
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.search-box input::-webkit-search-cancel-button {
+  display: none;
+}
+
+.search-box input::placeholder {
+  color: var(--ink-3);
+}
+
+.search-box input:focus {
+  outline: none;
+  border-color: var(--brand);
+  box-shadow: 0 0 0 3px var(--brand-soft);
+}
+
+.search-clear {
+  position: absolute;
+  right: 2px;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border: 0;
+  border-radius: 12px;
+  background: transparent;
+  color: var(--ink-2);
+}
+
+.clinic-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.clinic-tile {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  width: 100%;
+  height: 100%;
+  min-height: 112px;
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: var(--surface);
+  text-align: left;
+  color: var(--ink);
+  transition:
+    border-color 0.15s ease,
+    background-color 0.15s ease;
+}
+
+.clinic-tile:hover {
+  border-color: var(--brand);
+  background: var(--brand-tint);
+}
+
+.clinic-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  margin-bottom: 6px;
+  border-radius: 12px;
+  background: var(--brand-tint);
+  color: var(--brand);
+}
+
+.clinic-tile strong {
+  font-size: 0.9875rem;
+  line-height: 1.25;
+  overflow-wrap: anywhere;
+  hyphens: auto;
+}
+
+.clinic-tile > span:last-child {
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 0.8125rem;
+  color: var(--ink-2);
+}
+
+/* Hekim seçimi */
+
+.doctor-avatar {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--brand-soft);
+  color: var(--brand-strong);
+  font-weight: 750;
+  font-size: 0.9375rem;
+  letter-spacing: 0.02em;
+}
+
+.choice-text .doctor-title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--accent);
+}
+
+.choice-text strong {
+  overflow-wrap: anywhere;
+}
+
+.time-grid .slot-time small {
+  max-width: 100%;
+  padding: 0 4px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Giriş ekranı: kurum adı ve hafif marka zemini */
+
+.login {
+  background: linear-gradient(180deg, var(--brand-tint) 0%, var(--paper) 46%);
+}
+
+.login-head h1 {
+  color: var(--brand-strong);
+}
+
+.login-org {
+  margin-top: -4px;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+}
+
+@media (max-width: 370px) {
+  .clinic-tile {
+    min-height: 104px;
+    padding: 10px;
+  }
+}
